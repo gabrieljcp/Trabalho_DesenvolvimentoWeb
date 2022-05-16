@@ -1,13 +1,13 @@
 <?php
 	switch($_REQUEST['acao']){
 		case "cadastrar":
-			$nome = $_POST["nome"];
-			$idade = $_POST["idade"];
-			$apartamento = $_POST["apartamento"];
-			$data_nascimento = $_POST["data_nascimento"];
+			$cargo = $_POST["cargo"];
+			$salario = $_POST["salario"];
+			$dataInicio = $_POST["dataInicio"];
+			$escolaridadeExigida = $_POST["escolaridadeExigida"];
 
-			$sql = "INSERT INTO morador (nome,idade,apartamento,data_nascimento) 
-			        VALUES ('{$nome}','{$idade}','{$apartamento}','{$data_nascimento}')";
+			$sql = "INSERT INTO vagas (cargo, salario, dataInicio, escolaridadeExigida) 
+			        VALUES ('{$cargo}','{$salario}','{$dataInicio}','{$escolaridadeExigida}')";
 				
 		    $res = $conn->query($sql);
 
@@ -22,10 +22,10 @@
 
 			if($res==true){
 				print "<script>alert('Cadastrou com sucesso!');</script>";
-				print "<script>location.href='?page=listar-morador';</script>";
+				print "<script>location.href='?page=listar-vagas';</script>";
 			}else{
 				print "<script>alert('Não foi possível cadastrar');</script>";
-				print "<script>location.href='?page=listar-morador';</script>";
+				print "<script>location.href='?page=listar-vagas';</script>";
 			}
 		break;
 

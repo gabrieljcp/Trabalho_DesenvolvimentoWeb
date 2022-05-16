@@ -1,6 +1,6 @@
-<h1>Listar Moradores</h1>
+<h1>Listar Vagas</h1>
 <?php
-	$sql = "SELECT * FROM morador";
+	$sql = "SELECT * FROM vagas";
 	$res = $conn->query($sql);
 	$qtd = $res->num_rows;
 
@@ -10,18 +10,18 @@
 		print "<table class='table table-bordered table-striped table-hover'>";
 		print "<tr>";
 		print "<th>#</th>";
-		print "<th>Nome do Morador</th>";
-        print "<th>Idade</th>";
-        print "<th>Apartamento</th>";
-        print "<th>Data de Nascimento</th>";
+		print "<th>Cargo</th>";
+        print "<th>Salário</th>";
+        print "<th>Data de Início</th>";
+        print "<th>Escolaridade Exigida</th>";
 		print "</tr>";
 		while($row = $res->fetch_object()){
 			print "<tr>";
-			print "<td>".$row->idMorador."</td>";
-			print "<td>".$row->nome."</td>";
-            print "<td>".$row->idade."</td>";
-            print "<td>".$row->apartamento."</td>";
-            print "<td>".$row->data_nascimento."</td>";
+			print "<td>".$row->idvagas."</td>";
+			print "<td>".$row->cargo."</td>";
+            print "<td>".$row->salario."</td>";
+            print "<td>".$row->dataInicio."</td>";
+            print "<td>".$row->escolaridadeExigida."</td>";
 			print "</tr>";
 		}
 		print "</table>";
